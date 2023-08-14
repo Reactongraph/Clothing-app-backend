@@ -54,3 +54,4 @@ app.all("*", (req, resp) => {
 });
 app.use(errLog);
 app.listen(process.env.BACKEND_PORT||3001, () => console.log("server has started listening on ",process.env.BACKEND_PORT));
+module.exports = app;

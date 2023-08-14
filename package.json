@@ -18,8 +18,8 @@
   "description": "this is backend",
   "main": "index.js",
   "scripts": {
-    "test": "run",
-    "nodemon": "nodemon Apphandlebars.js"
+    "start": "node Apphandelbars.js",
+    "dev": "nodemon Apphandelbars.js"
   },
   "author": "anny",
   "license": "ISC",
