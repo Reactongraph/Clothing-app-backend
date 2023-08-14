@@ -17,6 +17,7 @@ app.use(cors(corsOptions));
 app.use(logger);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static('public'))
 
 const fetchApi = require("./router/restApi");
 const getroutes = require("./router/getRoutes");
@@ -26,6 +27,10 @@ const refreshAuth = require("./router/refreshauth");
 const updateuser = require("./router/api/updateuser");
 const normalUser = require("./router/api/getData");
 const rootUser = require("./router/api/getRootData");
+
+app.get('/', (req, res) => {
+  res.sendFile('index.html', {root: path.join(__dirname, 'public')});
+})
 
 app.use("/", fetchApi);
 app.use("/", signinroutes);
