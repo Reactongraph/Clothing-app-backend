@@ -34,7 +34,7 @@ router.post("/signin", async (req, res) => {
         maxAge: 24 * 60 * 60 * 1000,
         sameSite: "lax",
         secure: false,
-        domain: process.env.SITE_URL,
+        domain: process.env.SITE_URL||'https://clothing-app-frontend.vercel.app/',
         path: "/*",
       });
       res.status(202).send({
