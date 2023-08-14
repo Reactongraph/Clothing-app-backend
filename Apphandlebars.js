@@ -9,15 +9,16 @@ const app = express();
 const credentials = require("./middleware/credentails");
 const corsOptions = require("./config/corsOptions");
 const { logger, errLog } = require("./middleware/eventLogs");
-
-app.use(express.static('public'))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(cookieparser());
 app.use(credentials);
 app.use(cors(corsOptions));
 app.use(logger);
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 
+app.use(express.static('public'))
 const fetchApi = require("./router/restApi");
 const getroutes = require("./router/getRoutes");
 const signupmodelroutes = require("./router/signupmodelroutes");
