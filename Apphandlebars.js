@@ -5,6 +5,7 @@ const cors = require("cors");
 const cookieparser = require("cookie-parser");
 require("dotenv").config();
 const app = express();
+const bodyParser=require('body-parser')
 
 const credentials = require("./middleware/credentails");
 const corsOptions = require("./config/corsOptions");
