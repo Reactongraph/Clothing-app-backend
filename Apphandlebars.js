@@ -16,7 +16,6 @@ app.use(express.json());
 app.use(cookieparser());
 app.use(credentials);
 app.use(cors(corsOptions));
-app.use(logger);
 
 app.use(express.static('public'))
 const fetchApi = require("./router/restApi");
@@ -41,6 +40,5 @@ app.use("/", normalUser);
 app.use("/", rootUser);
 app.use("/", getroutes);
 
-app.use(errLog);
 app.listen(process.env.BACKEND_PORT||3001, () => console.log("server has started listening on ",process.env.BACKEND_PORT));
 module.exports = app;
