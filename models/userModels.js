@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 mongoose
   .connect(
     `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASS}@${process.env.MONGODB_CLUSTER_NAME}/${process.env.MONGODB_NAME}?retryWrites=true&w=majority`,
-    { maxPoolSize: 10, serverSelectionTimeoutMS: 5000, family: 4 }
   )
   .then((success) => {
     console.log("successfully connected to mongodb");
