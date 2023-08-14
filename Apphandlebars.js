@@ -8,7 +8,6 @@ const app = express();
 
 const credentials = require("./middleware/credentails");
 const corsOptions = require("./config/corsOptions");
-const { logger, errLog } = require("./middleware/eventLogs");
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(express.urlencoded({ extended: true }));
